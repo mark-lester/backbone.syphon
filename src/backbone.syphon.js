@@ -54,7 +54,12 @@ Syphon.serialize = function(view, options) {
 // Alternately, pass a form element directly
 // in place of the view.
 Syphon.deserialize = function(view, data, options) {
+  // take the JSON of object, allows deserialize(view,model);
+  if (typeof data.toJSON == 'function')
+      data=data.toJSON();
+
   // Build the configuration
+
   var config = buildConfig(options);
 
   // Get all of the elements to process

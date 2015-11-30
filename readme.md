@@ -194,6 +194,11 @@ var data = {
 
 Backbone.Syphon.deserialize(this, data);
 ```
+or use any object that has a toJSON() property
+```js
+data=new Backbome.model({a:"foo",b:"bar"});
+Backbone.Syphon.deserialize(this, data);
+```
 
 This will populate the form field elements with the correct values from the `data` parameter.
 
